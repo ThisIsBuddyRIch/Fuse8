@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETFramework,Version=v4.5.2/",
-    "signature": "185d736c47705514bd38a1c08e21297fd225ad0f"
+    "signature": "23ff11f99c1fceb92c36a8eeee538710a8558607"
   },
   "compilationOptions": {
     "defines": [
@@ -19,6 +19,7 @@
         "dependencies": {
           "System.Data": "4.0.0.0",
           "System.Data.DataSetExtensions": "4.0.0.0",
+          "ClosedXML": "0.86.0",
           "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics": "1.0.0",
           "Microsoft.AspNetCore.Mvc": "1.0.1",
@@ -36,6 +37,19 @@
         },
         "compile": {
           "F8App.exe": {}
+        }
+      },
+      "ClosedXML/0.86.0": {
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.5.0"
+        },
+        "compile": {
+          "lib/net40/ClosedXML.dll": {}
+        }
+      },
+      "DocumentFormat.OpenXml/2.5.0": {
+        "compile": {
+          "lib/DocumentFormat.OpenXml.dll": {}
         }
       },
       "Libuv/1.9.0": {
@@ -1153,6 +1167,7 @@
         "dependencies": {
           "System.Data": "4.0.0.0",
           "System.Data.DataSetExtensions": "4.0.0.0",
+          "ClosedXML": "0.86.0",
           "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics": "1.0.0",
           "Microsoft.AspNetCore.Mvc": "1.0.1",
@@ -1170,6 +1185,19 @@
         },
         "runtime": {
           "F8App.exe": {}
+        }
+      },
+      "ClosedXML/0.86.0": {
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.5.0"
+        },
+        "runtime": {
+          "lib/net40/ClosedXML.dll": {}
+        }
+      },
+      "DocumentFormat.OpenXml/2.5.0": {
+        "runtime": {
+          "lib/DocumentFormat.OpenXml.dll": {}
         }
       },
       "Libuv/1.9.0": {
@@ -2132,6 +2160,16 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "ClosedXML/0.86.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mNTaaPoNkGyMUBw5jNCr/5kwFBTDEg5IVVM1xfwbhjsMlom5DnATxyONjsVccQiEO0GLLje+iV1xjdfBz8j4+g=="
+    },
+    "DocumentFormat.OpenXml/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-H5jnox0hcLwzAjrpNqDPIItjh7dplF1kk1z8LatpI2h75wBgps1MepEttJFKs7xedQReCMHA0tGpNI0H2B+Mrg=="
     },
     "Libuv/1.9.0": {
       "type": "package",

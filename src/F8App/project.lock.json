@@ -3,6 +3,27 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.5.2": {
+      "ClosedXML/0.86.0": {
+        "type": "package",
+        "dependencies": {
+          "DocumentFormat.OpenXml": "2.5.0"
+        },
+        "compile": {
+          "lib/net40/ClosedXML.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ClosedXML.dll": {}
+        }
+      },
+      "DocumentFormat.OpenXml/2.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/DocumentFormat.OpenXml.dll": {}
+        },
+        "runtime": {
+          "lib/DocumentFormat.OpenXml.dll": {}
+        }
+      },
       "Libuv/1.9.0": {
         "type": "package",
         "dependencies": {
@@ -1281,15 +1302,6 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.Office.Interop.Excel/15.0.4795.1000": {
-        "type": "package",
-        "compile": {
-          "lib/net20/Microsoft.Office.Interop.Excel.dll": {}
-        },
-        "runtime": {
-          "lib/net20/Microsoft.Office.Interop.Excel.dll": {}
-        }
-      },
       "Microsoft.VisualStudio.Web.BrowserLink.Loader/14.0.0": {
         "type": "package",
         "dependencies": {
@@ -1877,6 +1889,29 @@
     }
   },
   "libraries": {
+    "ClosedXML/0.86.0": {
+      "sha512": "mNTaaPoNkGyMUBw5jNCr/5kwFBTDEg5IVVM1xfwbhjsMlom5DnATxyONjsVccQiEO0GLLje+iV1xjdfBz8j4+g==",
+      "type": "package",
+      "path": "ClosedXML/0.86.0",
+      "files": [
+        "ClosedXML.0.86.0.nupkg.sha512",
+        "ClosedXML.nuspec",
+        "lib/net35/ClosedXML.dll",
+        "lib/net35/ClosedXML.pdb",
+        "lib/net40/ClosedXML.dll",
+        "lib/net40/ClosedXML.pdb"
+      ]
+    },
+    "DocumentFormat.OpenXml/2.5.0": {
+      "sha512": "H5jnox0hcLwzAjrpNqDPIItjh7dplF1kk1z8LatpI2h75wBgps1MepEttJFKs7xedQReCMHA0tGpNI0H2B+Mrg==",
+      "type": "package",
+      "path": "DocumentFormat.OpenXml/2.5.0",
+      "files": [
+        "DocumentFormat.OpenXml.2.5.0.nupkg.sha512",
+        "DocumentFormat.OpenXml.nuspec",
+        "lib/DocumentFormat.OpenXml.dll"
+      ]
+    },
     "Libuv/1.9.0": {
       "sha512": "9Q7AaqtQhS8JDSIvRBt6ODSLWDBI4c8YxNxyCQemWebBFUtBbc6M5Vi5Gz1ZyIUlTW3rZK9bIr5gnVyv0z7a2Q==",
       "type": "package",
@@ -3014,16 +3049,6 @@
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
         "runtime.json"
-      ]
-    },
-    "Microsoft.Office.Interop.Excel/15.0.4795.1000": {
-      "sha512": "DfceS96ustwfL8EOJNNRtpk6b0RylhjNpgeeemuvi9X4GYks2UTeAimjSrdFEfuqRo5ibZ4Sd0gJIeDr9gMa6Q==",
-      "type": "package",
-      "path": "Microsoft.Office.Interop.Excel/15.0.4795.1000",
-      "files": [
-        "Microsoft.Office.Interop.Excel.15.0.4795.1000.nupkg.sha512",
-        "Microsoft.Office.Interop.Excel.nuspec",
-        "lib/net20/Microsoft.Office.Interop.Excel.dll"
       ]
     },
     "Microsoft.VisualStudio.Web.BrowserLink.Loader/14.0.0": {
@@ -4948,6 +4973,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "ClosedXML >= 0.86.0",
       "Microsoft.ApplicationInsights.AspNetCore >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics >= 1.0.0",
       "Microsoft.AspNetCore.Mvc >= 1.0.1",
@@ -4962,7 +4988,6 @@
       "Microsoft.Extensions.Logging.Console >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 1.0.0",
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.0.0",
-      "Microsoft.Office.Interop.Excel >= 15.0.4795.1000",
       "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0"
     ],
     ".NETFramework,Version=v4.5.2": [

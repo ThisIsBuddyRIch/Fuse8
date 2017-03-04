@@ -38,6 +38,7 @@ namespace F8App
             services.AddApplicationInsightsTelemetry(Configuration);
             services.AddTransient<IEmailServices, EmailServices>();
             services.AddTransient<IDbRepository, DbRepository>();
+            services.AddTransient<IReportService, ReportService>();
 
 
             services.AddOptions();
