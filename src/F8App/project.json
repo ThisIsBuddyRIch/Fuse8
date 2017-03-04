@@ -17,6 +17,7 @@
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
+    "Microsoft.Office.Interop.Excel": "15.0.4795.1000",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0"
   },
 
