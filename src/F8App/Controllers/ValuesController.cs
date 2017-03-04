@@ -27,8 +27,9 @@ namespace F8App.Controllers
         }
 
         // GET: api/values
-        [HttpGet("val")]
-        public IEnumerable<string> Get()
+        [HttpGet]
+        [Route("Report/{low}/{high}")]
+        public IEnumerable<string> Get(DateTime low, DateTime high)
         {
             var data = db.GetDataReport(DateTime.Now, DateTime.Now);
            

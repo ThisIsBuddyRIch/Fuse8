@@ -14,14 +14,15 @@ namespace F8App.Services
     {
         public void SaveData(IEnumerable<Report> data, string pathToSave)
         {
-
-            XLWorkbook workbook = new XLWorkbook();
-            //У ребят в библиотеке баг с парсингом decimal типа, костылируется вот так
             var currentCulture = Thread.CurrentThread.CurrentCulture;
-
-            var report = workbook.AddWorksheet("Report");
             try
             {
+                XLWorkbook workbook = new XLWorkbook();
+              
+              
+
+                var report = workbook.AddWorksheet("Report");
+                //У ребят в библиотеке баг с парсингом decimal типа, костылируется вот так
                 Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
                 var firsRow = report.Row(1);
@@ -47,7 +48,6 @@ namespace F8App.Services
                     row.Cell(3).Value = item.Quantity;
                     row.Cell(4).Value = item.PriceForUnit;
 
-                    // row.Cell(3).Value = XLCellValues.Number;
                     row.Cell(4).DataType = XLCellValues.Number;
 
                     row.Cell(5).Value = item.ProductName;
@@ -61,12 +61,7 @@ namespace F8App.Services
 
                 report.Columns().ForEach(x => x.AdjustToContents());
                 workbook.SaveAs(pathToSave);
-
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
+                
             }
             finally { Thread.CurrentThread.CurrentCulture = currentCulture; }
             
