@@ -31,3 +31,7 @@ _ReSharper*/
 #Nuget packages folder
 packages/
 bin/
+src/F8App/bin/Debug/net452/F8App.exe
+src/F8App/bin/Debug/net452/F8App.pdb
+src/F8App/bin/Debug/net452/win7-x64/F8App.exe
+src/F8App/bin/Debug/net452/win7-x64/F8App.pdb
