@@ -11,13 +11,6 @@ namespace F8App.Services
        void SendMessage(string mail, string pathAttach);
     }
 
-    public enum SmtpServerType
-    {
-        GMail,
-        Yandex,
-        MailRu
-    }
-
 }
 
 
