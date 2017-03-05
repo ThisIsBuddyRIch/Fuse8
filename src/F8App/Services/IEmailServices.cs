@@ -8,7 +8,7 @@ namespace F8App.Services
 {
     public interface IEmailServices
     {
-        void SendMessage(SmtpServerType smtp, Stream message);
+       void SendMessage(string mail, string pathAttach);
     }
 
     public enum SmtpServerType

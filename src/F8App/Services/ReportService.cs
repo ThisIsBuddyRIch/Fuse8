@@ -40,6 +40,7 @@ namespace F8App.Services
                 {
                     StringBuilder builder = new StringBuilder();
                     builder.AppendFormat("=C{0}*D{0}", j);
+
                     var row = report.Row(j);
 
                     row.Cell(1).Value = item.OrderId;

@@ -6,18 +6,20 @@ using Microsoft.AspNetCore.Mvc;
 using F8App.Services;
 using F8App.Storage;
 using Microsoft.AspNetCore.Hosting;
+using System.Net;
+using System.Net.Http;
+using F8App.Models;
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace F8App.Controllers
-{
-    [Route("api/[controller]")]
-    public class ValuesController : Controller
+{   [Route("api/Reports")]
+    public class ReportsController : Controller
     {
         IEmailServices mailService = null;
         IDbRepository db = null;
         IHostingEnvironment env = null;
         IReportService reportService = null;
-        public ValuesController(IEmailServices mailService, IDbRepository db, 
+        public ReportsController(IEmailServices mailService, IDbRepository db, 
                                 IHostingEnvironment env, IReportService reportService)
         {
             this.mailService = mailService;
@@ -28,41 +30,25 @@ namespace F8App.Controllers
 
         // GET: api/values
         [HttpGet]
-        [Route("Report/{low}/{high}")]
-        public IEnumerable<string> Get(DateTime low, DateTime high)
+        [Route("Report")]
+        public IEnumerable<Report> Report(DateTime fDate, DateTime sDate, string email)
         {
-            var data = db.GetDataReport(DateTime.Now, DateTime.Now);
+            var data = db.GetDataReport(fDate, sDate);
            
             var path = $"{env.WebRootPath}\\Reports\\{Guid.NewGuid()}.xlsx";
             reportService.SaveData(data, path);
-            return new string[] { "value1", "value2" };
+            mailService.SendMessage(email, path);
+            return data.Take(50);
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet]
+        [Route("Test")]
+        public string Test(string id)
         {
-            return "value";
+            return id;
         }
 
-        // POST api/values
+   
 
-
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

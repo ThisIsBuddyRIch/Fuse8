@@ -25,8 +25,6 @@ namespace F8App.Storage
             using (SqlConnection connection = new SqlConnection(_connString))
             {
                 connection.Open();
-                low = new DateTime(1998, 03, 10);
-                high = new DateTime(1999, 03, 10);
                 var cmd = new SqlCommand(@"SELECT [Order].ID, [Order].OrderDate,[Product].ID as [ProductId], 
                                            [Product].Name, [OrderDetail].Quantity, [OrderDetail].UnitPrice
                                            FROM [Order]
